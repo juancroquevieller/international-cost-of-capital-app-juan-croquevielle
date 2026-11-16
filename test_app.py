@@ -49,34 +49,90 @@ class FinanceTests(unittest.TestCase):
         for parser in [parse_yields,parse_spread]:
             with self.assertRaises(ValueError): parser('<html>Loading...</html>')
 
+
+from finance import PairInputs, compare
+
+class PairTests(unittest.TestCase):
+    def setUp(self): self.p=PairInputs(.8,.35,.3,.065,.04,.04,.12,.015)
+    def test_original_class_example(self):
+        r=compare(self.p)
+        self.assertAlmostEqual(r['country1_wacc'],.085265,12)
+        self.assertAlmostEqual(r['country2_wacc'],.16067,12)
+    def test_swap_symmetry(self):
+        p=replace(self.p,yield1=.06,yield2=.12,spread1=.02,spread2=.03)
+        a=compare(p);b=compare(replace(p,yield1=p.yield2,yield2=p.yield1,spread1=p.spread2,spread2=p.spread1))
+        for key in ['equity','debt','aftertax_debt','wacc','factor','spread']:
+            self.assertEqual(a['country1_'+key],b['country2_'+key])
+            self.assertEqual(a['country2_'+key],b['country1_'+key])
+    def test_non_us_pair_ratio(self):
+        r=compare(replace(self.p,yield1=.06))
+        self.assertAlmostEqual((1+r['country2_equity'])/(1+r['country1_equity']),1.12/1.06,14)
+    def test_side_override_isolation(self):
+        a=compare(self.p)
+        for side in [1,2]:
+            b=compare(replace(self.p,**{f'spread{side}':.04}))
+            other=3-side
+            for key in ['equity','debt','aftertax_debt','wacc']:
+                self.assertEqual(a[f'country{other}_'+key],b[f'country{other}_'+key])
+            self.assertEqual(a[f'country{side}_equity'],b[f'country{side}_equity'])
+            self.assertEqual(a['usd_wacc'],b['usd_wacc'])
+    def test_equal_yields_and_zero_debt(self):
+        r=compare(replace(self.p,yield1=.12,debt_share=0))
+        self.assertEqual(r['country1_wacc'],r['country2_wacc'])
+        for side in [1,2]: self.assertEqual(r[f'country{side}_wacc'],r[f'country{side}_equity'])
+    def test_market_source(self):
+        rows=snapshot()['betas']['rows'];market=next(r for r in rows if r['industry']=='Total Market')
+        self.assertEqual(market['source_row'],'Total Market (without financials)')
+        self.assertAlmostEqual(market['beta'],.877517,5)
+        self.assertEqual(len(rows),95)
+
 class UITests(unittest.TestCase):
-    def test_defaults_and_overrides(self):
+    def app(self):
         a=AppTest.from_file('app.py',default_timeout=30).run()
         self.assertFalse(a.exception)
-        self.assertEqual(a.selectbox[0].value,'Software (System & Application)')
-        self.assertEqual(a.selectbox[1].value,'USA')
+        return a
+    def test_defaults_and_two_non_us_countries(self):
+        a=self.app()
+        self.assertEqual(a.selectbox(key='industry').value,'Software (System & Application)')
+        self.assertEqual(a.selectbox(key='country1').value,'USA')
+        self.assertEqual(a.selectbox(key='country2').value,'USA')
         self.assertEqual(a.metric[0].value,a.metric[4].value)
-        a.selectbox[1].set_value('COL').run()
-        a.radio[0].set_value('Selected country').run()
+        a.selectbox(key='country1').set_value('CHL').run()
+        a.selectbox(key='country2').set_value('COL').run()
+        a.radio(key='tax_country').set_value('COL').run()
         self.assertFalse(a.exception)
-        before=[m.value for m in a.metric[:4]]
-        a.toggle(key='on_foreign_spread_COL').set_value(True).run()
-        a.number_input(key='value_foreign_spread_COL').set_value(4.0).run()
+        self.assertNotEqual(a.metric[0].value,a.metric[4].value)
+        before=[x.value for x in a.metric[:4]]
+        a.toggle(key='on_spread2_COL').set_value(True).run()
+        a.number_input(key='value_spread2_COL').set_value(4.).run()
+        self.assertEqual(before,[x.value for x in a.metric[:4]])
+    def test_total_market_and_manual_beta(self):
+        a=self.app()
+        a.selectbox(key='industry').set_value('Total Market').run()
         self.assertFalse(a.exception)
-        self.assertEqual(before,[m.value for m in a.metric[:4]])
-        a.toggle(key='on_foreign_spread_COL').set_value(False).run()
-        a.selectbox[1].set_value('USA').run()
-        a.radio[0].set_value('United States').run()
-        self.assertEqual(a.metric[0].value,a.metric[4].value)
-    def test_missing_data_requires_override(self):
-        a=AppTest.from_file('app.py',default_timeout=30).run()
-        a.selectbox[1].set_value('ATA').run()
+        self.assertEqual(len(a.dataframe[0].value),95)
+        self.assertEqual(a.dataframe[0].value.iloc[0]['Industry'],'Total Market')
+        original=a.dataframe[0].value.iloc[0]['Country 1 wacc (%)']
+        a.toggle(key='on_beta_Total Market').set_value(True).run()
+        a.number_input(key='value_beta_Total Market').set_value(1.5).run()
         self.assertFalse(a.exception)
+        self.assertEqual(a.dataframe[0].value.iloc[0]['Country 1 wacc (%)'],original)
+        self.assertNotEqual(float(a.metric[0].value.strip('%')),round(original,2))
+    def test_missing_country_manual_input(self):
+        a=self.app();a.selectbox(key='country1').set_value('ATA').run()
         self.assertTrue(a.info)
-        a.toggle(key='on_yield_ATA').set_value(True).run()
-        a.number_input(key='value_yield_ATA').set_value(5.0).run()
+        a.toggle(key='on_yield1_ATA').set_value(True).run()
+        a.number_input(key='value_yield1_ATA').set_value(5.).run()
+        self.assertFalse(a.exception);self.assertEqual(len(a.metric),8)
+    def test_us_reference_shared_and_tax_switch(self):
+        a=self.app()
+        a.toggle(key='on_us_yield').set_value(True).run()
+        a.number_input(key='value_us_yield').set_value(4.).run()
+        self.assertEqual(a.metric[0].value,a.metric[4].value)
+        a.selectbox(key='country2').set_value('COL').run()
+        a.radio(key='tax_country').set_value('COL').run()
+        a.selectbox(key='country2').set_value('GBR').run()
         self.assertFalse(a.exception)
-        self.assertEqual(len(a.metric),8)
+        self.assertIn(a.radio(key='tax_country').value,['USA','GBR'])
 
 if __name__=='__main__': unittest.main(verbosity=2)
-

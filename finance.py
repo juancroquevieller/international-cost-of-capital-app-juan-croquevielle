@@ -41,3 +41,32 @@ def calculate(p: Inputs) -> dict:
         usd_aftertax_debt=debt*(1-p.tax), foreign_aftertax_debt=foreign_debt*(1-p.tax),
         usd_wacc=(1-p.debt_share)*equity+p.debt_share*debt*(1-p.tax),
         foreign_wacc=(1-p.debt_share)*foreign_equity+p.debt_share*foreign_debt*(1-p.tax))
+
+@dataclass(frozen=True)
+class PairInputs:
+    beta_u: float
+    tax: float
+    debt_share: float
+    erp: float
+    us_yield: float
+    yield1: float
+    yield2: float
+    usd_spread: float
+    spread1: float | None = None
+    spread2: float | None = None
+
+
+def compare(p: PairInputs) -> dict:
+    """Convert a common USD reference independently into each selected currency."""
+    result = {}
+    for side, rate, spread in [(1, p.yield1, p.spread1), (2, p.yield2, p.spread2)]:
+        r = calculate(Inputs(p.beta_u, p.tax, p.debt_share, p.erp,
+                             p.us_yield, rate, p.usd_spread, spread))
+        if side == 1:
+            result.update({k: v for k, v in r.items() if k.startswith('usd_') or k in ['beta_e', 'debt_equity']})
+        for metric in ['equity', 'debt', 'aftertax_debt', 'wacc']:
+            result[f'country{side}_{metric}'] = r['foreign_'+metric]
+        result[f'country{side}_factor'] = r['conversion_factor']
+        result[f'country{side}_auto_spread'] = r['auto_foreign_spread']
+        result[f'country{side}_spread'] = r['effective_foreign_spread']
+    return result

@@ -1,72 +1,64 @@
 # Parity · Capital lens
 
-A Streamlit app for the international cost of capital assignment. It compares equity costs, pretax and after-tax debt costs, and WACC in USD and a selected country's currency. The existing Parity RER app is separate and unchanged.
+[Live app](https://parity-capital-juan-croquevielle.streamlit.app/)
 
-## Run
+Compare project equity costs, debt costs and WACC in the currencies of any two selected countries. A **Total Market** option and a benchmark under each result provide a broad business-risk comparison. The separate Parity RER app is unchanged.
 
-Python 3.12 recommended.
+## Run and deploy
 
-```sh
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
-python -m pip install -r requirements.txt
-streamlit run app.py
-```
-
-## Deploy on Streamlit Community Cloud
-
-Create a new GitHub repository and upload this folder's contents, including `.streamlit/config.toml` and `data/snapshot.json`. Keep `app.py`, `requirements.txt`, and `README.md` at repository root. In Streamlit Community Cloud choose the repository, branch `main`, entrypoint `app.py`, and Python 3.12. No API key or secrets are required.
+Python 3.12 recommended. Install with `python -m pip install -r requirements.txt`, then run `streamlit run app.py`. Streamlit Community Cloud uses branch `main`, entrypoint `app.py`; no API keys or secrets. Keep `.streamlit/config.toml` and `data/snapshot.json` in the repository.
 
 ## Defaults and controls
 
-Software (System & Application); United States; U.S. project tax; ERP 6.5%; debt share 30%. Choose any country. Where source coverage is missing, enter the missing yield/tax manually; no missing value is inferred. Overrides are scoped by industry/country and turning them off restores fetched values. The two government yields can be overridden independently, even for a U.S.–U.S. scenario.
+Software (System & Application), United States in both country selectors, U.S. project tax, 6.5% ERP, and 30% debt financing retain the assignment defaults. Either country can be changed. The project tax can come from the U.S. or either selected country and applies to both columns. Missing yields/taxes require manual entry.
 
-## Economics
+The U.S. reference yield, USD BBB spread, beta and tax can be overridden. Each non-U.S. selected-country yield and each side's borrowing spread can be overridden independently. A selected United States always shares the U.S. reference yield. Spread overrides affect only their own side's debt cost and WACC. Turning an override off restores the source or automatic value.
 
-Rates below are decimals, not percentages.
+## Class methodology and interpretation
+
+The cost of capital is a project's required return/opportunity cost. The Colombia example in Sergio Rebelo's CasePacket2026-part9 is a **Colombian project valued in USD and COP**, using Colombia's 35% project tax in both financing scenarios (slides 578–585).
+
+Slides 564–571 derive the currency conversion from the Fisher equation, equal real rates and relative PPP, relating it to expected depreciation. Slides 580 and 587 add no separate country equity premium. Slide 575 shows actual yield differences also include real-yield and sovereign-credit components; government yields are imperfect risk-free proxies. The app mechanically follows the class approximation and does not isolate those components.
+
+Therefore these are useful currency-consistent hurdle rates. The WACC gap alone does not measure the extra risk of locating a project in another country. Location comparisons require location-specific revenues, costs, taxes, and operating risk; infrastructure, institutions and political risk are discussed in slides 548–563. Changing one project tax reruns both currency columns for that project scenario.
+
+Rates in the engine are decimals:
 
 ```
-D/E = d / (1-d)
+D/E = d/(1-d)
 beta_E = beta_U * [1 + (1-tax)*D/E]
 Re_USD = Rf_USD + beta_E*ERP
 Rd_USD = Rf_USD + spread_USD
-F = (1+Rf_foreign)/(1+Rf_USD)
-Re_foreign = (1+Re_USD)*F - 1
-spread_foreign_auto = spread_USD*F
-Rd_foreign = Rf_foreign + spread_foreign_effective
-WACC_currency = (1-d)*Re_currency + d*Rd_currency*(1-tax)
+F_i = (1+Rf_i)/(1+Rf_USD)
+Re_i = (1+Re_USD)*F_i - 1
+spread_i_auto = spread_USD*F_i
+Rd_i = Rf_i + spread_i_effective
+WACC_i = (1-d)*Re_i + d*Rd_i*(1-tax)
 ```
 
-A foreign spread override affects only foreign debt and WACC. WACC is built separately by currency, not converted directly as a gross rate. Government yields are risk-free proxies; no extra country equity premium is added. The model assumes zero debt beta, fully usable interest deductions, equal real rates and relative PPP. Match cash-flow and discount-rate currencies.
+Each selected currency is converted independently from the common USD reference, so choosing or swapping two non-U.S. countries does not change the underlying risk benchmark. The class Colombia example still gives USD 8.5265% and COP 16.0670%. WACC is computed by currency from its components, including the currency-specific tax shield. The model assumes zero debt beta, fully usable interest deductions and shared target leverage and ERP.
 
-Class authority: Sergio Rebelo, CasePacket2026-part9, slides 564–587. The Colombia example gives USD WACC 8.5265% and COP WACC 16.0670%.
+Countries sharing a currency may have different government yields. The app flags that such a gap is not an FX conversion and can reflect sovereign or other yield premia.
 
-## Sources and resilience
+## Total Market
 
-- Damodaran U.S. industry workbook: `Industry Averages`, exact **Unlevered beta** column (not the cash-corrected beta). The workbook's own update date is preserved.
-- Damodaran ratings table: **Baa2/BBB**, first table, large nonfinancial firms; percentage spread converted to decimal.
-- OECD DSD_TAX_CIT / DF_CIT 2.0: combined statutory corporate rate, standard targeting, general government, percentage income tax, nonapplicable dividend/rate-structure/tax-base dimensions. Latest nonmissing observation per country, no future-year data. This updates the assignment's older 2024 report.
-- Trading Economics: public country-list government-bond-10y table. Its main `/bonds` page is dynamically loaded; the country-list table exposes the same indicator without a key. The source reference may only contain month/year. Do not interpret the retrieval timestamp as an exact market observation date.
+The UI label **Total Market** maps exactly to Damodaran's **Total Market (without financials)** row and its **Unlevered beta** column, not the cash-adjusted column. The publisher's aggregate is used directly; no simple average of industry betas and no beta=1 shortcut is used. Excluding financials aligns with the assignment's large-nonfinancial BBB borrowing spread.
 
-Initial page load attempts all sources (one-hour cache). Refresh fetches all four concurrently. If one fails, its last successful value and date remain, accompanied by a warning; successful sources still update. The committed snapshot permits operation during source outages. Run `python sources.py` to update that snapshot, with all-source validation before replacement. Live Streamlit refreshes remain in session memory.
+Both the selectable Total Market project and the companion benchmark share the project tax, leverage, ERP, yields and spreads. The companion benchmark and comparison table always retain the source aggregate beta, even if the selected project's beta is manually overridden. It represents a broad U.S. business-risk benchmark under the selected financing assumptions, not a local stock-market expected return. The current snapshot contains 94 industries plus this aggregate (95 rows).
 
-All-industry comparisons retain each source beta even when the selected project's beta is overridden. CSV/JSON exports retain precision and assumptions. Displayed rates use two decimal places; beta uses four. Percentage input controls may follow browser locale.
+## Data and exports
+
+- Damodaran U.S. beta workbook: `Industry Averages`, exact unlevered-beta column and workbook update date.
+- Damodaran rating spread: Baa2/BBB for large nonfinancial firms.
+- OECD DF_CIT 2.0: combined statutory rate, standard targeting, general government, latest nonmissing year per country.
+- Trading Economics: public government-bond-10y country-list table. Month-only observation references remain month-only.
+
+Initial load attempts all four sources with a one-hour cache. Refresh retries them concurrently; a failed source retains its last successful values/date and displays a warning. `python sources.py` replaces the committed snapshot only when all source checks pass.
+
+Project CSV and JSON include country identities, currency labels, the USD reference, effective inputs, override flags, source provenance and benchmark values. Industry CSV repeats shared assumptions and provenance alongside each source beta and currency result. Project rates are decimals; industry columns marked (%) are percentages. All calculations/exports retain full precision. Input widgets may use browser-locale decimal formatting; result rates display two decimal places and betas four.
 
 ## Verification
 
-```sh
-CAPITAL_OFFLINE=1 python -m unittest test_app
-```
+Run `python -m unittest test_app`. The test file enables offline snapshots. Nineteen tests cover the class benchmark, independent Decimal calculation, equal yields, zero debt, two-country swap symmetry, non-U.S. conversion ratios, override isolation, invalid inputs, negative yields, refresh failures, source rejection, Total Market provenance, defaults, missing data, and benchmark independence from manual beta overrides.
 
-On Windows PowerShell set `$env:CAPITAL_OFFLINE='1'` first. Eleven tests cover the independent decimal calculation, class benchmark, equal yields, zero debt, override isolation, invalid/nonfinite inputs, negative yields, failed-refresh preservation, parser rejection, defaults and missing-data interaction. Desktop/mobile screenshots and submission materials live outside the repository in the assignment's `Verification` and `Submission` folders.
-
-## Layout
-
-- `app.py`: responsive interface and exports
-- `finance.py`: pure calculation engine
-- `sources.py`: validated live importers and snapshot refresh
-- `data/snapshot.json`: public-source fallback and provenance
-- `test_app.py`: economic and interaction checks
-- `.streamlit/config.toml`: white/teal theme consistent with Parity RER
-- `PROMPTS.md`: AI collaboration record
+App files are in this repository; submission documents and browser verification evidence stay in the assignment's separate Submission and Verification folders.

@@ -31,6 +31,14 @@ def parse_betas(content):
     rows=[{'industry':str(n).strip(),'beta':float(b)} for n,b in zip(frame['Industry Name'],beta) if pd.notna(b) and b>=0 and not str(n).lower().startswith('total market')]
     if len(rows)<20 or not any(x['industry']=='Software (System & Application)' for x in rows):
         raise ValueError('Industry table did not pass schema checks.')
+    aggregate = frame.loc[frame['Industry Name'].astype(str).str.strip().eq('Total Market (without financials)')]
+    if len(aggregate) != 1:
+        raise ValueError('Expected exactly one Total Market (without financials) source row.')
+    market_beta = float(beta.loc[aggregate.index[0]])
+    if not pd.notna(market_beta) or market_beta < 0:
+        raise ValueError('Invalid Total Market unlevered beta.')
+    rows.insert(0, {'industry':'Total Market', 'beta':market_beta,
+                    'source_row':'Total Market (without financials)', 'aggregate':True})
     return {'rows':rows,'as_of':str(raw.iloc[0,1])[:10]}
 
 def parse_spread(html):
