@@ -1,0 +1,1761 @@
+{
+  "betas": {
+    "rows": [
+      {
+        "industry": "Advertising",
+        "beta": 0.930085673859911
+      },
+      {
+        "industry": "Aerospace/Defense",
+        "beta": 0.846668742124111
+      },
+      {
+        "industry": "Air Transport",
+        "beta": 0.7040501862693873
+      },
+      {
+        "industry": "Apparel",
+        "beta": 0.7579820882045375
+      },
+      {
+        "industry": "Auto & Truck",
+        "beta": 1.2690329072913427
+      },
+      {
+        "industry": "Auto Parts",
+        "beta": 1.0217137832780625
+      },
+      {
+        "industry": "Bank (Money Center)",
+        "beta": 0.3410587595479105
+      },
+      {
+        "industry": "Banks (Regional)",
+        "beta": 0.2865156418030888
+      },
+      {
+        "industry": "Beverage (Alcoholic)",
+        "beta": 0.6131715419678557
+      },
+      {
+        "industry": "Beverage (Soft)",
+        "beta": 0.5556711918551647
+      },
+      {
+        "industry": "Broadcasting",
+        "beta": 0.28636169661672445
+      },
+      {
+        "industry": "Brokerage & Investment Banking",
+        "beta": 0.5808487698048416
+      },
+      {
+        "industry": "Building Materials",
+        "beta": 0.9301623477287291
+      },
+      {
+        "industry": "Business & Consumer Services",
+        "beta": 0.7735875598670026
+      },
+      {
+        "industry": "Cable TV",
+        "beta": 0.3523921209643926
+      },
+      {
+        "industry": "Chemical (Basic)",
+        "beta": 0.5800328658623819
+      },
+      {
+        "industry": "Chemical (Diversified)",
+        "beta": 0.36655193179254153
+      },
+      {
+        "industry": "Chemical (Specialty)",
+        "beta": 0.7922271711710575
+      },
+      {
+        "industry": "Coal & Related Energy",
+        "beta": 1.0165349872490315
+      },
+      {
+        "industry": "Computer Services",
+        "beta": 0.9155102559970569
+      },
+      {
+        "industry": "Computers/Peripherals",
+        "beta": 1.3050624188250832
+      },
+      {
+        "industry": "Construction Supplies",
+        "beta": 1.0160678372067562
+      },
+      {
+        "industry": "Diversified",
+        "beta": 0.7889302024061987
+      },
+      {
+        "industry": "Drugs (Biotechnology)",
+        "beta": 1.034128692045902
+      },
+      {
+        "industry": "Drugs (Pharmaceutical)",
+        "beta": 0.8862112018778732
+      },
+      {
+        "industry": "Education",
+        "beta": 0.6601955817730791
+      },
+      {
+        "industry": "Electrical Equipment",
+        "beta": 1.1477945494288007
+      },
+      {
+        "industry": "Electronics (Consumer & Office)",
+        "beta": 0.8298525821858579
+      },
+      {
+        "industry": "Electronics (General)",
+        "beta": 0.8973653021365886
+      },
+      {
+        "industry": "Engineering/Construction",
+        "beta": 1.094912241925567
+      },
+      {
+        "industry": "Entertainment",
+        "beta": 0.7371838269272858
+      },
+      {
+        "industry": "Environmental & Waste Services",
+        "beta": 0.814469065497658
+      },
+      {
+        "industry": "Farming/Agriculture",
+        "beta": 0.8130198178522071
+      },
+      {
+        "industry": "Financial Svcs. (Non-bank & Insurance)",
+        "beta": 0.3188823716863237
+      },
+      {
+        "industry": "Food Processing",
+        "beta": 0.45741810112318915
+      },
+      {
+        "industry": "Food Wholesalers",
+        "beta": 0.6408819228030607
+      },
+      {
+        "industry": "Furn/Home Furnishings",
+        "beta": 0.6247880689027374
+      },
+      {
+        "industry": "Green & Renewable Energy",
+        "beta": 0.46330103394106914
+      },
+      {
+        "industry": "Healthcare Products",
+        "beta": 0.829063339182968
+      },
+      {
+        "industry": "Healthcare Support Services",
+        "beta": 0.6889158973179456
+      },
+      {
+        "industry": "Heathcare Information and Technology",
+        "beta": 0.9913008450033202
+      },
+      {
+        "industry": "Homebuilding",
+        "beta": 0.7849604569802948
+      },
+      {
+        "industry": "Hospitals/Healthcare Facilities",
+        "beta": 0.5517295035260499
+      },
+      {
+        "industry": "Hotel/Gaming",
+        "beta": 0.8322513645728964
+      },
+      {
+        "industry": "Household Products",
+        "beta": 0.7178159032286779
+      },
+      {
+        "industry": "Information Services",
+        "beta": 0.7371769598623608
+      },
+      {
+        "industry": "Insurance (General)",
+        "beta": 0.5636395230036526
+      },
+      {
+        "industry": "Insurance (Life)",
+        "beta": 0.4271563388858468
+      },
+      {
+        "industry": "Insurance (Prop/Cas.)",
+        "beta": 0.43565645519640217
+      },
+      {
+        "industry": "Investments & Asset Management",
+        "beta": 0.5297158729912839
+      },
+      {
+        "industry": "Machinery",
+        "beta": 0.8679764970807725
+      },
+      {
+        "industry": "Metals & Mining",
+        "beta": 0.963642813760502
+      },
+      {
+        "industry": "Office Equipment & Services",
+        "beta": 0.980603950937201
+      },
+      {
+        "industry": "Oil/Gas (Integrated)",
+        "beta": 0.2712192455295165
+      },
+      {
+        "industry": "Oil/Gas (Production and Exploration)",
+        "beta": 0.562759894026207
+      },
+      {
+        "industry": "Oil/Gas Distribution",
+        "beta": 0.4650757918129057
+      },
+      {
+        "industry": "Oilfield Svcs/Equip.",
+        "beta": 0.7430388962534321
+      },
+      {
+        "industry": "Packaging & Container",
+        "beta": 0.7230693503118022
+      },
+      {
+        "industry": "Paper/Forest Products",
+        "beta": 0.7215533176034462
+      },
+      {
+        "industry": "Power",
+        "beta": 0.31002381536217716
+      },
+      {
+        "industry": "Precious Metals",
+        "beta": 0.7932430128835662
+      },
+      {
+        "industry": "Publishing & Newspapers",
+        "beta": 0.47730712965508676
+      },
+      {
+        "industry": "R.E.I.T.",
+        "beta": 0.39290436962561487
+      },
+      {
+        "industry": "Real Estate (Development)",
+        "beta": 0.4782878873556669
+      },
+      {
+        "industry": "Real Estate (General/Diversified)",
+        "beta": 0.57785949402086
+      },
+      {
+        "industry": "Real Estate (Operations & Services)",
+        "beta": 0.8148915126864962
+      },
+      {
+        "industry": "Recreation",
+        "beta": 0.6950913817523879
+      },
+      {
+        "industry": "Reinsurance",
+        "beta": 0.43840910722706555
+      },
+      {
+        "industry": "Restaurant/Dining",
+        "beta": 0.767419655502052
+      },
+      {
+        "industry": "Retail (Automotive)",
+        "beta": 0.6984325625385885
+      },
+      {
+        "industry": "Retail (Building Supply)",
+        "beta": 1.3070143643127536
+      },
+      {
+        "industry": "Retail (Distributors)",
+        "beta": 0.7826829040437357
+      },
+      {
+        "industry": "Retail (General)",
+        "beta": 0.7599637023048608
+      },
+      {
+        "industry": "Retail (Grocery and Food)",
+        "beta": 0.804751465127235
+      },
+      {
+        "industry": "Retail (REITs)",
+        "beta": 0.4361730155949174
+      },
+      {
+        "industry": "Retail (Special Lines)",
+        "beta": 0.9487830646597303
+      },
+      {
+        "industry": "Rubber& Tires",
+        "beta": 0.14353369356004206
+      },
+      {
+        "industry": "Semiconductor",
+        "beta": 1.48925822268736
+      },
+      {
+        "industry": "Semiconductor Equip",
+        "beta": 1.3480733569303134
+      },
+      {
+        "industry": "Shipbuilding & Marine",
+        "beta": 0.644012905556584
+      },
+      {
+        "industry": "Shoe",
+        "beta": 0.9336746513867349
+      },
+      {
+        "industry": "Software (Entertainment)",
+        "beta": 1.0127806880948524
+      },
+      {
+        "industry": "Software (Internet)",
+        "beta": 1.5460643073174678
+      },
+      {
+        "industry": "Software (System & Application)",
+        "beta": 1.225391886520662
+      },
+      {
+        "industry": "Steel",
+        "beta": 0.9035142702396447
+      },
+      {
+        "industry": "Telecom (Wireless)",
+        "beta": 0.3872590553991877
+      },
+      {
+        "industry": "Telecom. Equipment",
+        "beta": 0.8634913488563035
+      },
+      {
+        "industry": "Telecom. Services",
+        "beta": 0.3654342533759909
+      },
+      {
+        "industry": "Tobacco",
+        "beta": 0.6775903166712723
+      },
+      {
+        "industry": "Transportation",
+        "beta": 0.67531101084817
+      },
+      {
+        "industry": "Transportation (Railroads)",
+        "beta": 0.8069481235657714
+      },
+      {
+        "industry": "Trucking",
+        "beta": 0.8504180575613394
+      },
+      {
+        "industry": "Utility (General)",
+        "beta": 0.14861284002770483
+      },
+      {
+        "industry": "Utility (Water)",
+        "beta": 0.281177328534438
+      }
+    ],
+    "as_of": "2026-01-05",
+    "source": "https://pages.stern.nyu.edu/~adamodar/pc/datasets/betas.xls",
+    "retrieved_at": "2026-11-16T16:37:43.694081+00:00",
+    "status": "Live fetch"
+  },
+  "spread": {
+    "value": 0.0111,
+    "as_of": "January 2026",
+    "source": "https://pages.stern.nyu.edu/adamodar/New_Home_Page/datafile/ratings.html",
+    "retrieved_at": "2026-11-16T16:37:43.662326+00:00",
+    "status": "Live fetch"
+  },
+  "taxes": {
+    "rows": [
+      {
+        "code": "COL",
+        "country": "Colombia",
+        "tax": 0.35,
+        "as_of": "2025",
+        "currency": "COP"
+      },
+      {
+        "code": "ISR",
+        "country": "Israel",
+        "tax": 0.23,
+        "as_of": "2025",
+        "currency": "ILS"
+      },
+      {
+        "code": "TUR",
+        "country": "Turkey",
+        "tax": 0.25,
+        "as_of": "2025",
+        "currency": "TRY"
+      },
+      {
+        "code": "HTI",
+        "country": "Haiti",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "AUS",
+        "country": "Australia",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "AUD"
+      },
+      {
+        "code": "CRI",
+        "country": "Costa Rica",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "CRC"
+      },
+      {
+        "code": "MEX",
+        "country": "Mexico",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "MXN"
+      },
+      {
+        "code": "FIN",
+        "country": "Finland",
+        "tax": 0.2,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "ISL",
+        "country": "Iceland",
+        "tax": 0.2,
+        "as_of": "2026",
+        "currency": "ISK"
+      },
+      {
+        "code": "LVA",
+        "country": "Latvia",
+        "tax": 0.2,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "KEN",
+        "country": "Kenya",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "KES"
+      },
+      {
+        "code": "MSR",
+        "country": "Montserrat",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "NGA",
+        "country": "Nigeria",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "NGN"
+      },
+      {
+        "code": "PNG",
+        "country": "Papua New Guinea",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "LCA",
+        "country": "Saint Lucia",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "SEN",
+        "country": "Senegal",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "LKA",
+        "country": "Sri Lanka",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "LKR"
+      },
+      {
+        "code": "GAB",
+        "country": "Gabon",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "AGO",
+        "country": "Angola",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "ATG",
+        "country": "Antigua and Barbuda",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "CHN",
+        "country": "China",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "CNY"
+      },
+      {
+        "code": "CIV",
+        "country": "C\u00f4te d'Ivoire",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "DJI",
+        "country": "Djibouti",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "DMA",
+        "country": "Dominica",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "SWZ",
+        "country": "Eswatini",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "FJI",
+        "country": "Fiji",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "GTM",
+        "country": "Guatemala",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "HND",
+        "country": "Honduras",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "JAM",
+        "country": "Jamaica",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "LBR",
+        "country": "Liberia",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "MRT",
+        "country": "Mauritania",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "MCO",
+        "country": "Monaco",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "MNG",
+        "country": "Mongolia",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "PAN",
+        "country": "Panama",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "PHL",
+        "country": "Philippines",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "PHP"
+      },
+      {
+        "code": "KNA",
+        "country": "Saint Kitts and Nevis",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "SYC",
+        "country": "Seychelles",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "SLE",
+        "country": "Sierra Leone",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "URY",
+        "country": "Uruguay",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "UYU"
+      },
+      {
+        "code": "AND",
+        "country": "Andorra",
+        "tax": 0.1,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "ARM",
+        "country": "Armenia",
+        "tax": 0.18,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "ABW",
+        "country": "Aruba",
+        "tax": 0.22,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "BRB",
+        "country": "Barbados",
+        "tax": 0.09,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "BIH",
+        "country": "Bosnia and Herzegovina",
+        "tax": 0.1,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "BWA",
+        "country": "Botswana",
+        "tax": 0.22,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "BRA",
+        "country": "Brazil",
+        "tax": 0.34,
+        "as_of": "2026",
+        "currency": "BRL"
+      },
+      {
+        "code": "BRN",
+        "country": "Brunei Darussalam",
+        "tax": 0.185,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "BGR",
+        "country": "Bulgaria",
+        "tax": 0.1,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "BFA",
+        "country": "Burkina Faso",
+        "tax": 0.275,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "CPV",
+        "country": "Cabo Verde",
+        "tax": 0.204,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "CMR",
+        "country": "Cameroon",
+        "tax": 0.33,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "COG",
+        "country": "Congo",
+        "tax": 0.28,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "HRV",
+        "country": "Croatia",
+        "tax": 0.18,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "DOM",
+        "country": "Dominican Republic",
+        "tax": 0.27,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "EGY",
+        "country": "Egypt",
+        "tax": 0.225,
+        "as_of": "2026",
+        "currency": "EGP"
+      },
+      {
+        "code": "FRO",
+        "country": "Faroe Islands",
+        "tax": 0.18,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "GRL",
+        "country": "Greenland",
+        "tax": 0.265,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "GRD",
+        "country": "Grenada",
+        "tax": 0.28,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "HKG",
+        "country": "Hong Kong",
+        "tax": 0.165,
+        "as_of": "2026",
+        "currency": "HKD"
+      },
+      {
+        "code": "IND",
+        "country": "India",
+        "tax": 0.25170000000000003,
+        "as_of": "2026",
+        "currency": "INR"
+      },
+      {
+        "code": "IDN",
+        "country": "Indonesia",
+        "tax": 0.22,
+        "as_of": "2026",
+        "currency": "IDR"
+      },
+      {
+        "code": "LIE",
+        "country": "Liechtenstein",
+        "tax": 0.125,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "MAC",
+        "country": "Macao",
+        "tax": 0.12,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "MYS",
+        "country": "Malaysia",
+        "tax": 0.24,
+        "as_of": "2026",
+        "currency": "MYR"
+      },
+      {
+        "code": "MDA",
+        "country": "Moldova, Republic of",
+        "tax": 0.12,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "NAM",
+        "country": "Namibia",
+        "tax": 0.32,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "MKD",
+        "country": "North Macedonia",
+        "tax": 0.1,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "PAK",
+        "country": "Pakistan",
+        "tax": 0.29,
+        "as_of": "2026",
+        "currency": "PKR"
+      },
+      {
+        "code": "PRY",
+        "country": "Paraguay",
+        "tax": 0.1,
+        "as_of": "2026",
+        "currency": "PYG"
+      },
+      {
+        "code": "PER",
+        "country": "Peru",
+        "tax": 0.295,
+        "as_of": "2026",
+        "currency": "PEN"
+      },
+      {
+        "code": "QAT",
+        "country": "Qatar",
+        "tax": 0.1,
+        "as_of": "2026",
+        "currency": "QAR"
+      },
+      {
+        "code": "ROU",
+        "country": "Romania",
+        "tax": 0.16,
+        "as_of": "2026",
+        "currency": "RON"
+      },
+      {
+        "code": "VCT",
+        "country": "Saint Vincent and the Grenadines",
+        "tax": 0.28,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "WSM",
+        "country": "Samoa",
+        "tax": 0.27,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "SMR",
+        "country": "San Marino",
+        "tax": 0.18,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "SGP",
+        "country": "Singapore",
+        "tax": 0.17,
+        "as_of": "2026",
+        "currency": "SGD"
+      },
+      {
+        "code": "ZAF",
+        "country": "South Africa",
+        "tax": 0.27,
+        "as_of": "2026",
+        "currency": "ZAR"
+      },
+      {
+        "code": "TGO",
+        "country": "Togo",
+        "tax": 0.27,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "UKR",
+        "country": "Ukraine",
+        "tax": 0.18,
+        "as_of": "2026",
+        "currency": "UAH"
+      },
+      {
+        "code": "ARE",
+        "country": "United Arab Emirates",
+        "tax": 0.09,
+        "as_of": "2026",
+        "currency": "AED"
+      },
+      {
+        "code": "AUT",
+        "country": "Austria",
+        "tax": 0.23,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "CAN",
+        "country": "Canada",
+        "tax": 0.26,
+        "as_of": "2026",
+        "currency": "CAD"
+      },
+      {
+        "code": "CHL",
+        "country": "Chile",
+        "tax": 0.27,
+        "as_of": "2026",
+        "currency": "CLP"
+      },
+      {
+        "code": "CZE",
+        "country": "Czech Republic",
+        "tax": 0.21,
+        "as_of": "2026",
+        "currency": "CZK"
+      },
+      {
+        "code": "FRA",
+        "country": "France",
+        "tax": 0.3613,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "DEU",
+        "country": "Germany",
+        "tax": 0.30133026,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "HUN",
+        "country": "Hungary",
+        "tax": 0.09,
+        "as_of": "2026",
+        "currency": "HUF"
+      },
+      {
+        "code": "IRL",
+        "country": "Ireland",
+        "tax": 0.125,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "ESP",
+        "country": "Spain",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "GBR",
+        "country": "United Kingdom",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "GBP"
+      },
+      {
+        "code": "ITA",
+        "country": "Italy",
+        "tax": 0.2781,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "JPN",
+        "country": "Japan",
+        "tax": 0.2974,
+        "as_of": "2026",
+        "currency": "JPY"
+      },
+      {
+        "code": "KOR",
+        "country": "South Korea",
+        "tax": 0.275,
+        "as_of": "2026",
+        "currency": "KRW"
+      },
+      {
+        "code": "LTU",
+        "country": "Lithuania",
+        "tax": 0.17,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "LUX",
+        "country": "Luxembourg",
+        "tax": 0.23870000000000002,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "NLD",
+        "country": "Netherlands",
+        "tax": 0.258,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "PRT",
+        "country": "Portugal",
+        "tax": 0.295,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "SVK",
+        "country": "Slovakia",
+        "tax": 0.24,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "SWE",
+        "country": "Sweden",
+        "tax": 0.20600000000000002,
+        "as_of": "2026",
+        "currency": "SEK"
+      },
+      {
+        "code": "CHE",
+        "country": "Switzerland",
+        "tax": 0.19471871,
+        "as_of": "2026",
+        "currency": "CHF"
+      },
+      {
+        "code": "USA",
+        "country": "United States",
+        "tax": 0.255285,
+        "as_of": "2026",
+        "currency": "USD"
+      },
+      {
+        "code": "BLZ",
+        "country": "Belize",
+        "tax": 0.0,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "BMU",
+        "country": "Bermuda",
+        "tax": 0.0,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "VGB",
+        "country": "Virgin Islands, British",
+        "tax": 0.0,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "CYM",
+        "country": "Cayman Islands",
+        "tax": 0.0,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "IMN",
+        "country": "Isle of Man",
+        "tax": 0.0,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "JEY",
+        "country": "Jersey",
+        "tax": 0.0,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "TCA",
+        "country": "Turks and Caicos Islands",
+        "tax": 0.0,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "BEL",
+        "country": "Belgium",
+        "tax": 0.25,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "AIA",
+        "country": "Anguilla",
+        "tax": 0.0,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "BHS",
+        "country": "Bahamas",
+        "tax": 0.0,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "BHR",
+        "country": "Bahrain",
+        "tax": 0.0,
+        "as_of": "2026",
+        "currency": "BHD"
+      },
+      {
+        "code": "GGY",
+        "country": "Guernsey",
+        "tax": 0.0,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "POL",
+        "country": "Poland",
+        "tax": 0.19,
+        "as_of": "2026",
+        "currency": "PLN"
+      },
+      {
+        "code": "DNK",
+        "country": "Denmark",
+        "tax": 0.22,
+        "as_of": "2026",
+        "currency": "DKK"
+      },
+      {
+        "code": "EST",
+        "country": "Estonia",
+        "tax": 0.22,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "GRC",
+        "country": "Greece",
+        "tax": 0.22,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "NOR",
+        "country": "Norway",
+        "tax": 0.22,
+        "as_of": "2026",
+        "currency": "NOK"
+      },
+      {
+        "code": "SVN",
+        "country": "Slovenia",
+        "tax": 0.22,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "NZL",
+        "country": "New Zealand",
+        "tax": 0.28,
+        "as_of": "2026",
+        "currency": "NZD"
+      },
+      {
+        "code": "ALB",
+        "country": "Albania",
+        "tax": 0.15,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "CUW",
+        "country": "Cura\u00e7ao",
+        "tax": 0.15,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "GEO",
+        "country": "Georgia",
+        "tax": 0.15,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "GIB",
+        "country": "Gibraltar",
+        "tax": 0.15,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "KWT",
+        "country": "Kuwait",
+        "tax": 0.15,
+        "as_of": "2026",
+        "currency": "KWD"
+      },
+      {
+        "code": "MDV",
+        "country": "Maldives",
+        "tax": 0.15,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "MUS",
+        "country": "Mauritius",
+        "tax": 0.15,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "MNE",
+        "country": "Montenegro",
+        "tax": 0.15,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "OMN",
+        "country": "Oman",
+        "tax": 0.15,
+        "as_of": "2026",
+        "currency": "OMR"
+      },
+      {
+        "code": "SRB",
+        "country": "Serbia",
+        "tax": 0.15,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "UZB",
+        "country": "Uzbekistan",
+        "tax": 0.15,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "ARG",
+        "country": "Argentina",
+        "tax": 0.35,
+        "as_of": "2026",
+        "currency": "ARS"
+      },
+      {
+        "code": "MLT",
+        "country": "Malta",
+        "tax": 0.35,
+        "as_of": "2026",
+        "currency": "EUR"
+      },
+      {
+        "code": "MAR",
+        "country": "Morocco",
+        "tax": 0.35,
+        "as_of": "2026",
+        "currency": "MAD"
+      },
+      {
+        "code": "AZE",
+        "country": "Azerbaijan",
+        "tax": 0.2,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "COK",
+        "country": "Cook Islands",
+        "tax": 0.2,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "JOR",
+        "country": "Jordan",
+        "tax": 0.2,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "KAZ",
+        "country": "Kazakhstan",
+        "tax": 0.2,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "SAU",
+        "country": "Saudi Arabia",
+        "tax": 0.2,
+        "as_of": "2026",
+        "currency": "SAR"
+      },
+      {
+        "code": "THA",
+        "country": "Thailand",
+        "tax": 0.2,
+        "as_of": "2026",
+        "currency": "THB"
+      },
+      {
+        "code": "TUN",
+        "country": "Tunisia",
+        "tax": 0.2,
+        "as_of": "2026",
+        "currency": "TND"
+      },
+      {
+        "code": "VNM",
+        "country": "Vietnam",
+        "tax": 0.2,
+        "as_of": "2026",
+        "currency": "VND"
+      },
+      {
+        "code": "COD",
+        "country": "Congo DR",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "TTO",
+        "country": "Trinidad and Tobago",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "BEN",
+        "country": "Benin",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "local currency"
+      },
+      {
+        "code": "ZMB",
+        "country": "Zambia",
+        "tax": 0.3,
+        "as_of": "2026",
+        "currency": "local currency"
+      }
+    ],
+    "as_of": "Latest available year for each country",
+    "source": "https://sdmx.oecd.org/public/rest/v1/data/OECD.CTP.TPS,DSD_TAX_CIT@DF_CIT,2.0/.A.CIT_C.ST..S13...?format=csvfile",
+    "retrieved_at": "2026-11-16T16:37:44.407294+00:00",
+    "status": "Live fetch"
+  },
+  "yields": {
+    "rows": [
+      {
+        "country": "Australia",
+        "yield": 0.0512,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/australia/government-bond-yield"
+      },
+      {
+        "country": "Austria",
+        "yield": 0.0362,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/austria/government-bond-yield"
+      },
+      {
+        "country": "Belgium",
+        "yield": 0.0438,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/belgium/government-bond-yield"
+      },
+      {
+        "country": "Brazil",
+        "yield": 0.1533,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/brazil/government-bond-yield"
+      },
+      {
+        "country": "Bulgaria",
+        "yield": 0.0363,
+        "as_of": "Feb/25",
+        "url": "https://tradingeconomics.com/bulgaria/government-bond-yield"
+      },
+      {
+        "country": "Canada",
+        "yield": 0.0381,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/canada/government-bond-yield"
+      },
+      {
+        "country": "Chile",
+        "yield": 0.0601,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/chile/government-bond-yield"
+      },
+      {
+        "country": "China",
+        "yield": 0.0163,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/china/government-bond-yield"
+      },
+      {
+        "country": "Colombia",
+        "yield": 0.127,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/colombia/government-bond-yield"
+      },
+      {
+        "country": "Croatia",
+        "yield": 0.0387,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/croatia/government-bond-yield"
+      },
+      {
+        "country": "Czech Republic",
+        "yield": 0.0524,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/czech-republic/government-bond-yield"
+      },
+      {
+        "country": "Denmark",
+        "yield": 0.0317,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/denmark/government-bond-yield"
+      },
+      {
+        "country": "Euro area",
+        "yield": 0.0394,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/euro-area/government-bond-yield"
+      },
+      {
+        "country": "Finland",
+        "yield": 0.037599999999999995,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/finland/government-bond-yield"
+      },
+      {
+        "country": "France",
+        "yield": 0.0495,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/france/government-bond-yield"
+      },
+      {
+        "country": "Germany",
+        "yield": 0.0338,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/germany/government-bond-yield"
+      },
+      {
+        "country": "Greece",
+        "yield": 0.043,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/greece/government-bond-yield"
+      },
+      {
+        "country": "Hong Kong",
+        "yield": 0.04,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/hong-kong/government-bond-yield"
+      },
+      {
+        "country": "Hungary",
+        "yield": 0.0553,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/hungary/government-bond-yield"
+      },
+      {
+        "country": "Iceland",
+        "yield": 0.0681,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/iceland/government-bond-yield"
+      },
+      {
+        "country": "India",
+        "yield": 0.0732,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/india/government-bond-yield"
+      },
+      {
+        "country": "Indonesia",
+        "yield": 0.0761,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/indonesia/government-bond-yield"
+      },
+      {
+        "country": "Ireland",
+        "yield": 0.0352,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/ireland/government-bond-yield"
+      },
+      {
+        "country": "Israel",
+        "yield": 0.041299999999999996,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/israel/government-bond-yield"
+      },
+      {
+        "country": "Italy",
+        "yield": 0.0446,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/italy/government-bond-yield"
+      },
+      {
+        "country": "Japan",
+        "yield": 0.028900000000000002,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/japan/government-bond-yield"
+      },
+      {
+        "country": "Kenya",
+        "yield": 0.125,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/kenya/government-bond-yield"
+      },
+      {
+        "country": "Lithuania",
+        "yield": 0.0434,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/lithuania/government-bond-yield"
+      },
+      {
+        "country": "Malaysia",
+        "yield": 0.0387,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/malaysia/government-bond-yield"
+      },
+      {
+        "country": "Mexico",
+        "yield": 0.0931,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/mexico/government-bond-yield"
+      },
+      {
+        "country": "Netherlands",
+        "yield": 0.0347,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/netherlands/government-bond-yield"
+      },
+      {
+        "country": "New Zealand",
+        "yield": 0.04769999999999999,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/new-zealand/government-bond-yield"
+      },
+      {
+        "country": "Nigeria",
+        "yield": 0.166,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/nigeria/government-bond-yield"
+      },
+      {
+        "country": "Norway",
+        "yield": 0.043899999999999995,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/norway/government-bond-yield"
+      },
+      {
+        "country": "Pakistan",
+        "yield": 0.12619999999999998,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/pakistan/government-bond-yield"
+      },
+      {
+        "country": "Peru",
+        "yield": 0.062400000000000004,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/peru/government-bond-yield"
+      },
+      {
+        "country": "Philippines",
+        "yield": 0.077,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/philippines/government-bond-yield"
+      },
+      {
+        "country": "Poland",
+        "yield": 0.0634,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/poland/government-bond-yield"
+      },
+      {
+        "country": "Portugal",
+        "yield": 0.0384,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/portugal/government-bond-yield"
+      },
+      {
+        "country": "Romania",
+        "yield": 0.0716,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/romania/government-bond-yield"
+      },
+      {
+        "country": "Russia",
+        "yield": 0.1674,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/russia/government-bond-yield"
+      },
+      {
+        "country": "Singapore",
+        "yield": 0.023399999999999997,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/singapore/government-bond-yield"
+      },
+      {
+        "country": "Slovakia",
+        "yield": 0.043,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/slovakia/government-bond-yield"
+      },
+      {
+        "country": "Slovenia",
+        "yield": 0.0394,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/slovenia/government-bond-yield"
+      },
+      {
+        "country": "South Africa",
+        "yield": 0.0872,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/south-africa/government-bond-yield"
+      },
+      {
+        "country": "South Korea",
+        "yield": 0.039900000000000005,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/south-korea/government-bond-yield"
+      },
+      {
+        "country": "Spain",
+        "yield": 0.039599999999999996,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/spain/government-bond-yield"
+      },
+      {
+        "country": "Sweden",
+        "yield": 0.031,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/sweden/government-bond-yield"
+      },
+      {
+        "country": "Switzerland",
+        "yield": 0.005699999999999999,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/switzerland/government-bond-yield"
+      },
+      {
+        "country": "Taiwan",
+        "yield": 0.0187,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/taiwan/government-bond-yield"
+      },
+      {
+        "country": "Thailand",
+        "yield": 0.019799999999999998,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/thailand/government-bond-yield"
+      },
+      {
+        "country": "Turkey",
+        "yield": 0.33520000000000005,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/turkey/government-bond-yield"
+      },
+      {
+        "country": "United Kingdom",
+        "yield": 0.0536,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/united-kingdom/government-bond-yield"
+      },
+      {
+        "country": "United States",
+        "yield": 0.051399999999999994,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/united-states/government-bond-yield"
+      },
+      {
+        "country": "Vietnam",
+        "yield": 0.045700000000000005,
+        "as_of": "Nov/26",
+        "url": "https://tradingeconomics.com/vietnam/government-bond-yield"
+      }
+    ],
+    "as_of": "Reference period shown per country (source may report month only)",
+    "source": "https://tradingeconomics.com/country-list/government-bond-10y",
+    "retrieved_at": "2026-11-16T16:37:43.662326+00:00",
+    "status": "Live fetch"
+  }
+}
