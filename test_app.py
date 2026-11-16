@@ -86,6 +86,40 @@ class PairTests(unittest.TestCase):
         self.assertAlmostEqual(market['beta'],.877517,5)
         self.assertEqual(len(rows),95)
 
+class LocationTests(unittest.TestCase):
+    def setUp(self): self.p=PairInputs(.8,.35,.3,.065,.04,.04,.12,.015,tax1=.25,tax2=.35)
+    def test_independent_location_arithmetic(self):
+        r=compare(self.p)
+        # Independent direct algebra, using distinct statutory taxes.
+        for side,tax,yield_ in [(1,.25,.04),(2,.35,.12)]:
+            beta=.8*(1+(1-tax)*3/7)
+            equity=(1+.04+beta*.065)*(1+yield_)/1.04-1
+            debt=yield_+.015*(1+yield_)/1.04
+            self.assertAlmostEqual(r[f'country{side}_beta_e'],beta,14)
+            self.assertAlmostEqual(r[f'country{side}_aftertax_debt'],debt*(1-tax),14)
+            self.assertAlmostEqual(r[f'country{side}_wacc'],.7*equity+.3*debt*(1-tax),14)
+        self.assertAlmostEqual(r['country1_wacc'],.088475,12)
+        self.assertAlmostEqual(r['country2_wacc'],.16067,12)
+    def test_same_taxes_reproduce_class(self):
+        a=compare(replace(self.p,tax1=.35));b=compare(replace(self.p,tax1=None,tax2=None))
+        for side in [1,2]:
+            for metric in ['beta_e','equity','debt','aftertax_debt','wacc']:
+                self.assertEqual(a[f'country{side}_{metric}'],b[f'country{side}_{metric}'])
+    def test_tax_isolation_and_swap(self):
+        a=compare(self.p);b=compare(replace(self.p,tax2=.1))
+        for key in a:
+            if key.startswith('country1_'): self.assertEqual(a[key],b[key])
+        self.assertEqual(a['country2_debt'],b['country2_debt'])
+        self.assertNotEqual(a['country2_equity'],b['country2_equity'])
+        c=compare(replace(self.p,tax1=.35,tax2=.25,yield1=.12,yield2=.04))
+        self.assertEqual(a['country1_wacc'],c['country2_wacc'])
+        self.assertEqual(a['country2_wacc'],c['country1_wacc'])
+    def test_zero_debt_tax_irrelevant_and_invalid_tax(self):
+        a=compare(replace(self.p,debt_share=0));b=compare(replace(self.p,debt_share=0,tax1=.1,tax2=.9))
+        for side in [1,2]: self.assertEqual(a[f'country{side}_wacc'],b[f'country{side}_wacc'])
+        for tax in [-.1,1.1,float('nan')]:
+            with self.assertRaises(ValueError): compare(replace(self.p,tax2=tax))
+
 class UITests(unittest.TestCase):
     def app(self):
         a=AppTest.from_file('app.py',default_timeout=30).run()
@@ -134,5 +168,32 @@ class UITests(unittest.TestCase):
         a.selectbox(key='country2').set_value('GBR').run()
         self.assertFalse(a.exception)
         self.assertIn(a.radio(key='tax_country').value,['USA','GBR'])
+
+    def test_location_mode_tax_and_market(self):
+        a=self.app();a.selectbox(key='country2').set_value('COL').run()
+        original=[m.value for m in a.metric]
+        a.radio(key='comparison_mode').set_value('Project location').run()
+        self.assertFalse(a.exception)
+        self.assertEqual(a.metric[0].value,original[0])
+        self.assertNotEqual(a.metric[4].value,original[4])
+        table=a.dataframe[0].value
+        self.assertNotEqual(table.iloc[0]['Country 1 equity beta'],table.iloc[0]['Country 2 equity beta'])
+        first=[m.value for m in a.metric[:4]]
+        a.toggle(key='on_location_tax2_COL').set_value(True).run()
+        a.number_input(key='value_location_tax2_COL').set_value(20.).run()
+        self.assertEqual(first,[m.value for m in a.metric[:4]])
+        self.assertNotEqual(table.iloc[0]['Country 2 wacc (%)'],a.dataframe[0].value.iloc[0]['Country 2 wacc (%)'])
+        a.radio(key='comparison_mode').set_value('Class method').run()
+        self.assertFalse(a.exception)
+        self.assertEqual(original,[m.value for m in a.metric])
+    def test_location_missing_tax_requires_override(self):
+        a=self.app();a.radio(key='comparison_mode').set_value('Project location').run()
+        a.selectbox(key='country1').set_value('ATA').run()
+        a.toggle(key='on_yield1_ATA').set_value(True).run()
+        a.number_input(key='value_yield1_ATA').set_value(5.).run()
+        self.assertTrue(a.info);self.assertEqual(len(a.metric),0)
+        a.toggle(key='on_location_tax1_ATA').set_value(True).run()
+        a.number_input(key='value_location_tax1_ATA').set_value(25.).run()
+        self.assertFalse(a.exception);self.assertEqual(len(a.metric),8)
 
 if __name__=='__main__': unittest.main(verbosity=2)

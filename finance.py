@@ -54,15 +54,23 @@ class PairInputs:
     usd_spread: float
     spread1: float | None = None
     spread2: float | None = None
+    tax1: float | None = None
+    tax2: float | None = None
 
 
 def compare(p: PairInputs) -> dict:
-    """Convert a common USD reference independently into each selected currency."""
-    result = {}
+    """Use shared project tax by default; explicit side taxes model locations."""
+    result = {'debt_equity': p.debt_share/(1-p.debt_share) if p.debt_share != 1 else float('inf')}
     for side, rate, spread in [(1, p.yield1, p.spread1), (2, p.yield2, p.spread2)]:
-        r = calculate(Inputs(p.beta_u, p.tax, p.debt_share, p.erp,
+        tax = getattr(p, f"tax{side}")
+        tax = p.tax if tax is None else tax
+        r = calculate(Inputs(p.beta_u, tax, p.debt_share, p.erp,
                              p.us_yield, rate, p.usd_spread, spread))
-        if side == 1:
+        result[f'country{side}_tax'] = tax
+        result[f'country{side}_beta_e'] = r['beta_e']
+        result[f'country{side}_usd_reference_equity'] = r['usd_equity']
+        result[f'country{side}_usd_reference_wacc'] = r['usd_wacc']
+        if side == 1 and p.tax1 is None and p.tax2 is None:
             result.update({k: v for k, v in r.items() if k.startswith('usd_') or k in ['beta_e', 'debt_equity']})
         for metric in ['equity', 'debt', 'aftertax_debt', 'wacc']:
             result[f'country{side}_{metric}'] = r['foreign_'+metric]

@@ -37,3 +37,9 @@ User: Yeah let's do that... just call it ''Total Market''.
 Review outcome: The assistant reviewed the entire international-valuation section and corrected its overly categorical explanation. Cost of capital is the project's required return/opportunity cost. However, the class example values a Colombian project in USD and COP with one Colombian tax rate; it does not isolate location risk. The class conversion captures expected depreciation under Fisher/PPP assumptions and adds no separate country equity premium. Actual government-yield differences can contain other premia, as slides 575 and 587 explain. The app now makes this distinction explicit.
 
 Implementation: independent Country 1/Country 2 selectors; a common USD reference for both; Total Market from Damodaran's nonfinancial aggregate unlevered beta; benchmark alongside the selected project; 19 regression and interaction checks. Assignment defaults are retained.
+
+## Country-specific tax comparison
+
+User: Can we also add a comparison using each country's own tax rate? I'd like to see how the same project would look if located in either country, while keeping the class-method comparison available.
+
+Implemented two modes: Class method retains shared project tax; Project location applies each country’s statutory tax to both equity relevering and its interest tax shield. The companion Total Market calculation and all exports follow the active mode. Twenty-five tests validate calculations and interactions.
